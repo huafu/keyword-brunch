@@ -36,7 +36,7 @@ class KeywordProcessor
         if packageInfo[keyword]
           map[keyword] = packageInfo[keyword]
         else
-          console.error "#{fs.basename @packageInfoFilePath} need a #{keyword}"
+          console.error "#{sysPath.basename @packageInfoFilePath} need a #{keyword}"
     map['date'] = @getDateValue compilationDate
     map['timestamp'] = @getTimestampValue compilationDate
     map
@@ -93,7 +93,7 @@ class KeywordProcessor
     unless fs.existsSync(path)
       return []
     unless fs.statSync(path).isDirectory()
-      if filterFunc(fs.basename(path), fs.dirname(path))
+      if filterFunc(sysPath.basename(path), sysPath.dirname(path))
         [path]
       else
         []
