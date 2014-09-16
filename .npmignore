@@ -2,6 +2,7 @@
 .svn/
 .hg/
 .git/
+.ieda/
 CVS/
 *~
 *.bak
