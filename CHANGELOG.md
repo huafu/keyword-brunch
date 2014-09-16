@@ -1,4 +1,7 @@
 # keyword-brunch 1.7
+* __1.7.8__ (2014-09-16)
+    * Fixed wrong module use in the path filter
+
 * __1.7.7__ (2014-06-17)
 	* Rewrote the tests using CoffeeScript and added better tests
 	* Fixed errors
