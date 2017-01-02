@@ -44,7 +44,7 @@ describe 'Basic plugin behavdiour', ->
     expect(spy).to.not.have.been.called
 
   it 'should call _onCompile when the config exists', ->
-    plugin = new Plugin(keyword: {})
+    plugin = new Plugin({ plugins: keyword: {} })
     spy = sinon.spy plugin, '_onCompile'
     plugin.onCompile()
     expect(spy).to.have.been.called
@@ -62,7 +62,7 @@ describe 'Replacing files\' content', ->
 
   beforeEach (done) ->
     filePattern = /\.(html|js)$/
-    plugin = new Plugin keyword: {filePattern, map}
+    plugin = new Plugin plugins: { keyword: {filePattern, map} }
     ncp PUBLIC_TEMPLATE_ROOT, PUBLIC_ROOT, (err) ->
       throw err if err
       done()
