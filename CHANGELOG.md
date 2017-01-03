@@ -1,3 +1,7 @@
+# keyword-brunch 2.0
+* __2.0.0__ (2016-01-02)
+    * Updated plugin interface to brunch 2.0
+
 # keyword-brunch 1.7
 * __1.7.8__ (2014-09-16)
     * Fixed wrong module use in the path filter

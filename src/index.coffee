@@ -15,14 +15,14 @@ class KeywordProcessor
 
   constructor: (@config = {}) ->
     KeywordProcessor.instance = @
-    return unless @config.keyword
+    return unless @config.plugins && @config.plugins.keyword
     path = sysPath.resolve(@config.paths?.public ? 'public')
     if (pip = @config.keyword?.jsonPackageFilePath)
       @packageInfoFilePath = pip
     if @packageInfoFilePath
       @packageInfoFilePath = fs.realpathSync(@packageInfoFilePath)
     @publicPath = path
-    @keywordConfig = @config.keyword
+    @keywordConfig = @config.plugins.keyword    
     @filePattern = @keywordConfig.filePattern ? /\.(js|css|html)$/
     @keywordMap = @keywordConfig.map ? {}
 
